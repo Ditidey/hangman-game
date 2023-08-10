@@ -1,1 +1,7 @@
- 
+ body{
+  max-width: 100%;
+ }
+ .body-con{
+  max-width: 95%;
+  margin: 0 auto;
+ }
