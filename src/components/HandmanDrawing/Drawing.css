@@ -2,3 +2,33 @@
     position: relative;
     margin: 0 auto;
 }
+
+.head{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: solid 10px black;
+    top: 70px;
+    left: 230px;
+    right: 300px;
+    position: absolute;
+}
+.body-con{
+    height: 100px;
+    width: 10px;
+    position: absolute;
+    top: 130px;
+    background: black;
+    left: 260px;
+}
+.right-arm{
+    height: 80px;
+    width: 10px;
+    position: absolute;
+    background: black;
+    top: 150px;
+    right: 100px;
+    rotate: -30deg;
+    transform-origin: left bottom;
+    left: 300px;
+}
