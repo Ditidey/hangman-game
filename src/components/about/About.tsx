@@ -2,7 +2,7 @@ import React from 'react';
 import './About.css';
 
 type aboutProps = {
-    modalOpen: (arg: boolean)=>{}
+    modalOpen: (isOpen: boolean)=> void
 }
 const About = ({modalOpen}:aboutProps) => {
     return (

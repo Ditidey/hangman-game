@@ -35,6 +35,7 @@
          padding-left: 0px;
      }
        .detail-div{
+        display: block;
         margin-left: 0px;
        }
      .body-con {

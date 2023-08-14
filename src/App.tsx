@@ -72,12 +72,16 @@ function App() {
 
   // opening about modal
   const [open, setOpen] = useState(false)
+  
+
+  // for showing score
   let score = 0;
   if(isWinner){
     score = score + 1
     localStorage.setItem('score', JSON.stringify(score))
   }
   let getScore = localStorage.getItem('score')
+   
   return (
     <div className=''  >
       <div style={{ display: 'flex', }}>
@@ -88,7 +92,7 @@ function App() {
       <div className='detail-div'>
         <p onClick={() => setOpen(!open)} style={{ color: 'blue', fontSize:'1.2rem' }}>See details of the game</p>
         <div style={{marginTop: '18px', marginLeft:'18px'}}>
-          <button>Your Score </button><button>  {getScore | 0}  </button>
+          <button>Your Score </button><button>  {getScore || 0}  </button>
         </div>
       </div>
 
@@ -112,7 +116,11 @@ function App() {
           ></ManKeyboard>
         </div>
       </div>
-
+      <hr />
+     <div style={{ padding: '40px'}}>
+      <p style={{textAlign:'center'}}>Hangman Game</p>
+      <p style={{textAlign:'center'}}>Preserved by Diti Rani Dey & &copy; 2023. All rights reserved.</p>
+     </div>
     </div>
   )
 }
