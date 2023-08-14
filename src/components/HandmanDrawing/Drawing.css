@@ -1,6 +1,7 @@
 .body{
     position: relative;
     margin: 0 auto;
+    
 }
 
 .head{
@@ -12,23 +13,57 @@
     left: 230px;
     right: 300px;
     position: absolute;
+    z-index: 10px;
 }
 .body-con{
     height: 100px;
     width: 10px;
     position: absolute;
     top: 130px;
-    background: black;
+    background: goldenrod;
     left: 260px;
 }
 .right-arm{
-    height: 80px;
+    height: 70px;
     width: 10px;
     position: absolute;
-    background: black;
-    top: 150px;
+    background: rgb(206, 5, 5);
+    top: 135px;
     right: 100px;
-    rotate: -30deg;
+    rotate: -35deg;
     transform-origin: left bottom;
     left: 300px;
+}
+.left-arm{
+    height: 70px;
+    width: 10px;
+    position: absolute;
+    background: rgb(206, 5, 5);
+    top: 130px;
+    right: 100px;
+    rotate: 35deg;
+    transform-origin: left bottom;
+    left: 220px;
+}
+.right-leg{
+    height: 70px;
+    width: 10px;
+    position: absolute;
+    background: rgb(206, 5, 5);
+    top: 215px;
+    right: 100px;
+    rotate: -35deg;
+    transform-origin: left bottom;
+    left: 300px;
+}
+.left-leg{
+    height: 70px;
+    width: 10px;
+    position: absolute;
+    background: rgb(206, 5, 5);
+    top: 210px;
+    right: 100px;
+    rotate: 35deg;
+    transform-origin: left bottom;
+    left: 220px;
 }

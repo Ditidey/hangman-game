@@ -1,0 +1,20 @@
+.word-div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 6rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+.letter-div{
+    border-bottom: .50rem solid black;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 360px){
+    .word-div{
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+}
