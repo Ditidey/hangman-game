@@ -1,0 +1,23 @@
+.about-con{
+    max-width: 600px;
+    height: 500px;
+    background-color: rgb(254, 244, 229);
+    box-shadow: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 200px;
+    z-index: 10;
+    inset: 0;
+    position: fixed;
+    margin-top: 20px;
+    
+}
+
+@media screen and (max-width: 360px) {
+     .about-con{
+        max-width: 320px;
+        margin-left: 10px;
+        height: auto;
+        overflow-y: scroll;
+     }
+}

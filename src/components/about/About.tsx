@@ -1,8 +1,13 @@
 import React from 'react';
+import './About.css';
 
-const About = () => {
+type aboutProps = {
+    modalOpen: (arg: boolean)=>{}
+}
+const About = ({modalOpen}:aboutProps) => {
     return (
-        <div>
+        <div className='about-con'>
+             <button onClick={()=>modalOpen(false)} style={{backgroundColor:'red', color:'white'}}>X</button>
             <div>
                 <p>Hangman is a classic word-guessing game that involves some random words, player will attempt to guess the word one letter at a time</p>
                 <ul>

@@ -35,10 +35,10 @@ const HangmanDrawing = ({numOfGuess}: DrawingProps) => {
         <div className='body'>
             {bodyPart.slice(0, numOfGuess)}
             {/* for hanger */}
-            <div style={{width: '10px', height:'80px', marginLeft:'260px', position:'absolute', top:0, background: 'black'}}></div>
-            <div style={{width: '150px', height:'10px', marginLeft:'120px', background: 'blue'}}></div>
-            <div style={{width: '10px', height:'400px', marginLeft:'120px', background: 'green'}}></div>
-            <div style={{width: '250px', height:'10px', background: 'black'}}></div>
+            <div style={{width: '10px', height:'50px', marginLeft:'220px', position:'absolute', top:0, background: 'black'}}></div>
+            <div style={{width: '150px', height:'10px', marginLeft:'70px', background: 'blue'}}></div>
+            <div style={{width: '10px', height:'290px', marginLeft:'70px', background: 'green'}}></div>
+            <div className='base' ></div>
         </div>
     );
 };

@@ -1,27 +1,32 @@
 .body{
     position: relative;
-    margin: 0 auto;
+    margin: 30px;
     
 }
+.base{
+    width: 150px;
+    height: 10px;
+    background-color: black;
 
+}
 .head{
     height: 50px;
     width: 50px;
     border-radius: 100%;
     border: solid 10px black;
-    top: 70px;
-    left: 230px;
+    top: 50px;
+    left: 190px;
     right: 300px;
     position: absolute;
     z-index: 10px;
 }
 .body-con{
-    height: 100px;
+    height: 90px;
     width: 10px;
     position: absolute;
-    top: 130px;
+    top: 117px;
     background: goldenrod;
-    left: 260px;
+    left: 220px;
 }
 .right-arm{
     height: 70px;
@@ -32,7 +37,7 @@
     right: 100px;
     rotate: -35deg;
     transform-origin: left bottom;
-    left: 300px;
+    left: 260px;
 }
 .left-arm{
     height: 70px;
@@ -43,27 +48,36 @@
     right: 100px;
     rotate: 35deg;
     transform-origin: left bottom;
-    left: 220px;
+    left: 180px;
 }
 .right-leg{
     height: 70px;
     width: 10px;
     position: absolute;
     background: rgb(206, 5, 5);
-    top: 215px;
+    top: 195px;
     right: 100px;
     rotate: -35deg;
     transform-origin: left bottom;
-    left: 300px;
+    left: 260px;
 }
 .left-leg{
     height: 70px;
     width: 10px;
     position: absolute;
     background: rgb(206, 5, 5);
-    top: 210px;
+    top: 190px;
     right: 100px;
     rotate: 35deg;
     transform-origin: left bottom;
-    left: 220px;
+    left: 180px;
+}
+
+@media screen and (max-width:360px) {
+    .body{
+        margin: 0;
+        padding: 0px;
+        background-color: aliceblue;
+    }
+    
 }

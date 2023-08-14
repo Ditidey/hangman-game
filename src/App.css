@@ -1,22 +1,44 @@
  body {
      max-width: 100%;
      padding: 10px;
+     padding-left: 350px;
+     background: rgb(246, 236, 172);
+     background: linear-gradient(90deg, rgb(252, 251, 249) 0%, rgba(222, 219, 180, 0.6) 0%, rgb(245, 230, 65) 100%);
  }
-
+.detail-div{
+    display: flex;
+    margin-left: 600px;
+}
  .body-con {
-     max-width: 80%;    
+     max-width: 80%;
      margin: 0 auto;
  }
- .toast{
-    max-width: 300px;
-    color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+ .toast {
+     max-width: 300px;
+     color: black;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
      text-align: center;
      font-size: 1.5rem;
      font-weight: 700;
      padding: 10px;
  }
- .win{
-    text-align: center;
-    font-size: 2rem;
+
+ .win {
+     text-align: center;
+     font-size: 2rem;
+ }
+
+ @media screen and (max-width: 360px) {
+     body {
+         padding: 5px;
+         padding-left: 0px;
+     }
+       .detail-div{
+        margin-left: 0px;
+       }
+     .body-con {
+         max-width: 95%;
+         margin: 0%;
+     }
  }
