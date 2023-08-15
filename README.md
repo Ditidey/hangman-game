@@ -7,5 +7,10 @@
 4. code .
 5. npm run dev or npm start
 _____________________________________
-### Live Link: https://64da6962e8f2fa1080ddebfa--lovely-gelato-bf9cff.netlify.app/
+### Live Link: https://hangman-game-typescript.vercel.app
+## Hangman Game:
+* Guessing Letters: User can guess 6 letters.
+* Incorrect Guess: If the guessed letter is not in the word, it will show a figure.
+* Winning:  If user successfully guess all the letters in the word before the entire hangman figure is drawn. Got 1 score for each win.
+*  Losing: If user show all parts of the body, he/she is a loser. And can try again.
 

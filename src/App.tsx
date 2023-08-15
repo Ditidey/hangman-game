@@ -15,11 +15,11 @@ function App() {
   const [wordToGuess, setWordToGuess] = useState(makeNewWord)
   const [typeWord, setTypeWord] = useState<string[]>([])
   // passing props in drawing component
-  const correctGuess = typeWord.filter(le => wordToGuess.includes(le))
   const wrongGuess = typeWord.filter(le => !wordToGuess.includes(le))
+  const correctGuess = typeWord.filter(le => wordToGuess.includes(le))
 
   // showing winner or loser
-  const isLoser = wrongGuess.length >= 10;
+  const isLoser = wrongGuess.length >= 6;
   const isWinner = wordToGuess.split('').every(le => typeWord.includes(le))
 
   const addTypeWords = useCallback((key: string) => {
@@ -77,12 +77,8 @@ function App() {
 
   // opening about modal
   const [open, setOpen] = useState(false)
-  const [gameScore, setScore] = useState(0)
-  // const [game, setGame] = useState('')
-
+   
   // for showing score
-  // let score = 0;
-  // if (isWinner) {
   let getScore = localStorage.getItem('score');
   console.log('get', getScore)
   if (getScore === null) {
@@ -92,18 +88,9 @@ function App() {
   if (isWinner) {
     score = score + 1
     localStorage.setItem('score', JSON.stringify(score))
-
-    // setScore(score)
-    // setGame(game)
     console.log(score)
   }
-  let game = (score / 3).toFixed(0);
-  // }
-
-
-
-
-
+  
   return (
     <div className=''  >
       <div className='nav-con'>
@@ -112,13 +99,13 @@ function App() {
       </div>
       {/* for showing details and score */}
       <div className='detail-div'>
-        <p onClick={() => setOpen(!open)} style={{ color: 'blue', fontSize: '1.2rem' }}>See details of the game</p>
+        <p onClick={() => setOpen(!open)} style={{ color: 'blue', fontSize: '1.2rem', marginLeft:'8px'}}>See details of the game</p>
         <div style={{ marginTop: '18px', marginLeft: '18px' }}>
-          <button>Your Score </button><button>  {score || 0}  </button>
+          <button style={{padding:'3px'}}>Your Score </button><button style={{padding:'3px'}}>  {score || 0}  </button>
           <br />
-          <button>Games</button><button>{game || '0'}</button>
-          <br />
-          <button onClick={tryAgain} style={{ padding: '4px', margin: '4px', backgroundColor: 'rebeccapurple', color: 'whitesmoke' }}>Try Again</button>
+          {/* <button>Games</button><button>{game || '0'}</button> */}
+        
+          <button onClick={tryAgain} style={{ padding: '4px', margin: '6px', backgroundColor: 'rebeccapurple', color: 'whitesmoke' }}>{isLoser ? 'Try Again' : 'New Game'}</button>
         </div>
       </div>
       <hr style={{marginTop:'10px'}}/>
@@ -128,10 +115,10 @@ function App() {
       }
       <div className={``} onClick={() => setOpen(false)} >
         <div className='toast'>
-          {isWinner && 'Wow! You crack the word. You can play again'}
-          {isLoser && 'Sorry! Wrong guess. You can try again'}
+          {isWinner && <h2 style={{color:'green'}}>Wow! You crack the word. You can play again</h2>}
+          {isLoser && <h2 style={{color:'red'}}>Sorry! Wrong guess. You can try again.</h2>}
         </div>
-        <HangmanDrawing numOfGuess={correctGuess.length}></HangmanDrawing>
+        <HangmanDrawing numOfGuess={wrongGuess.length}></HangmanDrawing>
         <HangmanWords typeWord={typeWord} wordToGuess={wordToGuess} reavel={isLoser}></HangmanWords>
 
         <div style={{ alignSelf: 'stretch' }}>
