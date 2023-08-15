@@ -16,5 +16,13 @@
     .word-div{
         font-size: 2rem;
         margin-top: 20px;
+        margin-left: 6px;
+    }
+}
+@media screen and (max-width: 600px){
+    .word-div{
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-left: 6px;
     }
 }

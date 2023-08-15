@@ -8,6 +8,7 @@ type WordsProps = {
 }
 const HangmanWords = ({typeWord, wordToGuess, reavel=false}: WordsProps) => {
 //    console.log(wordToGuess)
+let words = 'access'
     return (
         <div className='word-div'>
             {

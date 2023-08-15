@@ -1,9 +1,9 @@
 .about-con{
     max-width: 600px;
-    height: 500px;
+    height: 400px;
     background-color: rgb(254, 244, 229);
     box-shadow: 20px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     margin-left: 200px;
     z-index: 10;
@@ -16,8 +16,18 @@
 @media screen and (max-width: 360px) {
      .about-con{
         max-width: 320px;
+        padding: 8px;
         margin-left: 10px;
         height: auto;
+        overflow-y: scroll;
+     }
+}
+@media screen and (max-width: 600px) {
+     .about-con{
+        max-width: 350px;
+        padding: 8px;
+        margin-left: 10px;
+        height: 500px;
         overflow-y: scroll;
      }
 }

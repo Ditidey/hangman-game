@@ -23,7 +23,6 @@ function App() {
   const isWinner = wordToGuess.split('').every(le => typeWord.includes(le))
 
   const addTypeWords = useCallback((key: string) => {
-    console.log('hi from add function')
     if (typeWord.includes(key) || isLoser || isWinner) {
       return
     }
@@ -35,13 +34,15 @@ function App() {
   // eventlistener for keyboard
   useEffect(() => {
     const keyController = (event: KeyboardEvent) => {
-      console.log('hi')
+      // console.log('hi')
       const key = event.key
-      console.log(key)
-      if (!key.match(/^[a-z]$/)) return
+      // console.log(key)
+      if (!key.match(/^[a-z]$/) || key !== 'Enter') return
 
       event.preventDefault()
       addTypeWords(key)
+      // setTypeWord([])
+      // setWordToGuess(makeNewWord())
     }
 
     document.addEventListener('keypress', keyController)
@@ -50,10 +51,14 @@ function App() {
       document.removeEventListener('keypress', keyController)
     }
   }, [typeWord])
-  // for pressing enter button and get a new word
+  // for pressing try again and get a new word
+  const tryAgain = () => {
+    setTypeWord([])
+    setWordToGuess(makeNewWord())
+  }
   useEffect(() => {
     const keyController = (event: KeyboardEvent) => {
-      console.log('hi')
+      // console.log('hi')
       const key = event.key
       console.log(key)
       if (key !== 'Enter') return
@@ -72,29 +77,51 @@ function App() {
 
   // opening about modal
   const [open, setOpen] = useState(false)
-  
+  const [gameScore, setScore] = useState(0)
+  // const [game, setGame] = useState('')
 
   // for showing score
-  let score = 0;
-  if(isWinner){
+  // let score = 0;
+  // if (isWinner) {
+  let getScore = localStorage.getItem('score');
+  console.log('get', getScore)
+  if (getScore === null) {
+    getScore = '0';
+  }
+  let score = parseInt(getScore, 10);
+  if (isWinner) {
     score = score + 1
     localStorage.setItem('score', JSON.stringify(score))
+
+    // setScore(score)
+    // setGame(game)
+    console.log(score)
   }
-  let getScore = localStorage.getItem('score')
-   
+  let game = (score / 3).toFixed(0);
+  // }
+
+
+
+
+
   return (
     <div className=''  >
-      <div style={{ display: 'flex', }}>
+      <div className='nav-con'>
         <img src={img} alt="" style={{ width: '35px', height: '35px', borderRadius: '100%', marginTop: '25px', marginRight: '5px' }} />
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold' }}>Guess your words</h2>
       </div>
       {/* for showing details and score */}
       <div className='detail-div'>
-        <p onClick={() => setOpen(!open)} style={{ color: 'blue', fontSize:'1.2rem' }}>See details of the game</p>
-        <div style={{marginTop: '18px', marginLeft:'18px'}}>
-          <button>Your Score </button><button>  {getScore || 0}  </button>
+        <p onClick={() => setOpen(!open)} style={{ color: 'blue', fontSize: '1.2rem' }}>See details of the game</p>
+        <div style={{ marginTop: '18px', marginLeft: '18px' }}>
+          <button>Your Score </button><button>  {score || 0}  </button>
+          <br />
+          <button>Games</button><button>{game || '0'}</button>
+          <br />
+          <button onClick={tryAgain} style={{ padding: '4px', margin: '4px', backgroundColor: 'rebeccapurple', color: 'whitesmoke' }}>Try Again</button>
         </div>
       </div>
+      <hr style={{marginTop:'10px'}}/>
 
       {
         open == true && <About modalOpen={setOpen}></About>
@@ -117,10 +144,10 @@ function App() {
         </div>
       </div>
       <hr />
-     <div style={{ padding: '40px'}}>
-      <p style={{textAlign:'center'}}>Hangman Game</p>
-      <p style={{textAlign:'center'}}>Preserved by Diti Rani Dey & &copy; 2023. All rights reserved.</p>
-     </div>
+      <div className='foot'>
+        <p style={{ fontWeight: 'bold' }} >Hangman Game</p>
+        <p >Preserved by Diti Rani Dey <br /> & &copy; 2023. All rights reserved.</p>
+      </div>
     </div>
   )
 }

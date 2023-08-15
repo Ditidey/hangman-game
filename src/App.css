@@ -5,6 +5,9 @@
      background: rgb(246, 236, 172);
      background: linear-gradient(90deg, rgb(252, 251, 249) 0%, rgba(222, 219, 180, 0.6) 0%, rgb(245, 230, 65) 100%);
  }
+ .nav-con{
+    display: flex;
+ }
 .detail-div{
     display: flex;
     margin-left: 600px;
@@ -28,15 +31,58 @@
      text-align: center;
      font-size: 2rem;
  }
-
+.foot{
+    padding: 40px;
+}
+.foot p{
+    text-align: center;
+}
  @media screen and (max-width: 360px) {
      body {
-         padding: 5px;
-         padding-left: 0px;
+        padding: 5px;
+         padding-left: 8px;
+         border: .25rem solid white;
      }
        .detail-div{
         display: block;
         margin-left: 0px;
+       }
+      
+       .nav-con img{
+        height: 15px;
+        width: 15px;
+        margin-top: 0px;
+        margin-right: 0px;
+       }
+     .body-con {
+         max-width: 95%;
+         margin: 0%;
+     }
+     .foot{
+        padding: 5px;
+     }
+     .foot p{
+        text-align: left;
+     }
+ }
+ 
+ @media screen and (max-width: 600px) {
+     body {
+        max-width: 95%;
+        height: auto;
+         padding: 5px;
+         padding-left: 10px;
+         border: .25rem solid white;
+         margin: 4px;
+     }
+       .detail-div{
+        display: block;
+        margin-left: 0px;
+       }
+       
+       .nav-con img{
+        margin-top: 0px;
+        margin-right: 0px;
        }
      .body-con {
          max-width: 95%;
